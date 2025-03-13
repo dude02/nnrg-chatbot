@@ -6,7 +6,7 @@ import OpenAI from "openai"
 
 // Initialize OpenAI configuration
 const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true, // Note: In production, API calls should be made from the server
 })
 
@@ -121,6 +121,31 @@ const pdfKnowledgeBase = {
 
     algorithms:
       "Design and Analysis of Algorithms Syllabus (21CS603PC):\n\nUnit 1: Introduction\n- Algorithm Analysis\n- Asymptotic Notations\n- Divide and Conquer\n\nUnit 2: Disjoint Sets and Backtracking\n- Disjoint Set Operations\n- Union and Find Algorithms\n- N-Queens Problem\n- Graph Coloring\n\nUnit 3: Dynamic Programming\n- Optimal Binary Search Trees\n- Knapsack Problem\n- All Pairs Shortest Path\n- Traveling Salesperson Problem\n\nUnit 4: Greedy Method\n- Job Sequencing\n- Minimum Cost Spanning Trees\n- Single Source Shortest Path\n\nUnit 5: Branch and Bound\n- Traveling Salesperson Problem\n- 0/1 Knapsack Problem\n- NP-Hard and NP-Complete Problems",
+    
+    // Lab syllabi - Added to distinguish between regular courses and lab courses
+    "operating systems lab": 
+      "Operating Systems Lab Syllabus (CSE-403PC-Lab):\n\nList of Experiments:\n\n1. Simulation of CPU Scheduling Algorithms\n   - First-Come-First-Served (FCFS)\n   - Shortest Job First (SJF)\n   - Priority Scheduling\n   - Round Robin (RR)\n\n2. Implementation of Bankers Algorithm for Deadlock Avoidance\n\n3. Implementation of Page Replacement Algorithms\n   - FIFO\n   - LRU\n   - Optimal\n\n4. Implementation of Memory Allocation Methods for fixed partition\n   - First Fit\n   - Best Fit\n   - Worst Fit\n\n5. Implementation of Disk Scheduling Algorithms\n   - FCFS\n   - SCAN\n   - C-SCAN\n\n6. Implementation of File Organization Techniques\n   - Single-level directory\n   - Two-level directory\n   - Hierarchical directory\n\n7. Implementation of File Allocation Strategies\n   - Sequential\n   - Indexed\n   - Linked\n\n8. Shell Programming\n   - Basic shell commands\n   - Shell scripts with decision making\n   - Shell scripts with looping statements",
+    
+    "dbms lab": 
+      "Database Management Systems Lab Syllabus (CSE-404PC-Lab):\n\nList of Experiments:\n\n1. ER Diagram and Schema Creation\n   - Design ER diagram for a given case study\n   - Convert ER diagram to relational schema\n   - Create tables with constraints\n\n2. SQL Queries - Data Definition Language (DDL)\n   - CREATE, ALTER, DROP, TRUNCATE commands\n   - Implementing constraints\n\n3. SQL Queries - Data Manipulation Language (DML)\n   - INSERT, UPDATE, DELETE commands\n   - SELECT queries with various clauses\n\n4. SQL Queries - Advanced\n   - Joins (INNER, OUTER, CROSS)\n   - Subqueries\n   - Set operations (UNION, INTERSECT, MINUS)\n\n5. Implementation of Built-in Functions\n   - String functions\n   - Numeric functions\n   - Date functions\n   - Aggregate functions\n\n6. PL/SQL Programming\n   - Stored procedures\n   - Functions\n   - Triggers\n   - Cursors\n\n7. Database Connectivity\n   - Connect to database using JDBC/ODBC\n   - Implement CRUD operations\n\n8. Mini Project\n   - Design and implement a database application\n   - Front-end and back-end integration",
+    
+    "data structures lab": 
+      "Data Structures Lab Syllabus (CSE-201-Lab):\n\nList of Experiments:\n\n1. Implementation of Arrays\n   - One-dimensional arrays\n   - Multi-dimensional arrays\n   - Array operations (insertion, deletion, searching)\n\n2. Implementation of Linked Lists\n   - Singly linked list\n   - Doubly linked list\n   - Circular linked list\n   - Operations (insertion, deletion, traversal)\n\n3. Implementation of Stacks\n   - Using arrays\n   - Using linked lists\n   - Applications (expression evaluation, conversion)\n\n4. Implementation of Queues\n   - Linear queue\n   - Circular queue\n   - Priority queue\n   - Double-ended queue\n\n5. Implementation of Trees\n   - Binary tree\n   - Binary search tree\n   - AVL tree\n   - Operations (insertion, deletion, traversal)\n\n6. Implementation of Graphs\n   - Adjacency matrix\n   - Adjacency list\n   - Graph traversals (BFS, DFS)\n\n7. Implementation of Searching Algorithms\n   - Linear search\n   - Binary search\n   - Hashing techniques\n\n8. Implementation of Sorting Algorithms\n   - Bubble sort\n   - Selection sort\n   - Insertion sort\n   - Merge sort\n   - Quick sort\n   - Heap sort",
+    
+    "web technologies lab": 
+      "Web Technologies Lab Syllabus (CSE-504PC-Lab):\n\nList of Experiments:\n\n1. HTML and CSS\n   - Create a personal website with multiple pages\n   - Implement responsive design\n   - Use CSS for styling\n\n2. JavaScript\n   - Form validation\n   - DOM manipulation\n   - Event handling\n\n3. PHP Programming\n   - Variables and control structures\n   - Form handling\n   - File operations\n\n4. PHP and MySQL\n   - Database connectivity\n   - CRUD operations\n   - Session management\n\n5. XML and DTD\n   - Create XML documents\n   - Define DTD\n   - XML validation\n\n6. Servlet Programming\n   - Servlet lifecycle\n   - Request and response handling\n   - Session tracking\n\n7. JSP Programming\n   - JSP directives\n   - Implicit objects\n   - Custom tags\n\n8. Mini Project\n   - Develop a web application\n   - Implement front-end and back-end\n   - Database integration",
+    
+    "computer networks lab": 
+      "Computer Networks Lab Syllabus (21CS503PC-Lab):\n\nList of Experiments:\n\n1. Network Commands\n   - ping, traceroute, ipconfig/ifconfig\n   - netstat, nslookup, arp\n\n2. Socket Programming\n   - TCP client-server communication\n   - UDP client-server communication\n   - Multi-client server\n\n3. Implementation of Reliable Data Transfer\n   - Stop and Wait protocol\n   - Go-Back-N protocol\n   - Selective Repeat protocol\n\n4. Simulation of Network Protocols\n   - Ethernet\n   - Token Ring\n   - CSMA/CD\n\n5. Routing Algorithms\n   - Distance Vector Routing\n   - Link State Routing\n   - Dijkstra's algorithm\n\n6. Network Simulation Tools\n   - NS2/NS3 basics\n   - Packet Tracer/GNS3\n   - Network topology creation\n\n7. Wireshark Packet Analysis\n   - Capture and analyze packets\n   - Protocol analysis\n   - Network troubleshooting\n\n8. Network Security\n   - Firewall configuration\n   - Encryption techniques\n   - VPN setup",
+    
+    "machine learning lab": 
+      "Machine Learning Lab Syllabus (CSE-601PC-Lab):\n\nList of Experiments:\n\n1. Data Preprocessing\n   - Data cleaning\n   - Feature selection\n   - Normalization/Standardization\n\n2. Linear Regression\n   - Simple linear regression\n   - Multiple linear regression\n   - Polynomial regression\n\n3. Classification Algorithms\n   - Logistic Regression\n   - Decision Trees\n   - Support Vector Machines\n\n4. Clustering Algorithms\n   - K-Means clustering\n   - Hierarchical clustering\n   - DBSCAN\n\n5. Dimensionality Reduction\n   - Principal Component Analysis (PCA)\n   - Linear Discriminant Analysis (LDA)\n\n6. Ensemble Methods\n   - Random Forest\n   - AdaBoost\n   - Gradient Boosting\n\n7. Neural Networks\n   - Perceptron\n   - Multi-layer Neural Network\n   - Backpropagation\n\n8. Model Evaluation\n   - Cross-validation\n   - Performance metrics\n   - Hyperparameter tuning",
+    
+    "compiler design lab": 
+      "Compiler Design Lab Syllabus (CSE-602PC-Lab):\n\nList of Experiments:\n\n1. Lexical Analyzer\n   - Implementation using LEX/FLEX\n   - Token recognition\n   - Symbol table management\n\n2. Syntax Analyzer\n   - Implementation using YACC/Bison\n   - Grammar definition\n   - Parse tree generation\n\n3. Semantic Analyzer\n   - Type checking\n   - Scope resolution\n   - Symbol table operations\n\n4. Intermediate Code Generation\n   - Three-address code\n   - Abstract syntax tree\n   - Quadruples/Triples\n\n5. Code Optimization\n   - Constant folding\n   - Dead code elimination\n   - Loop optimization\n\n6. Code Generation\n   - Target code generation\n   - Register allocation\n   - Instruction selection\n\n7. Error Handling\n   - Syntax error recovery\n   - Semantic error reporting\n   - Runtime error handling\n\n8. Mini Compiler Project\n   - Design and implement a simple compiler\n   - Source language to target language translation",
+    
+    "cryptography lab": 
+      "Cryptography and Network Security Lab Syllabus (CSE-701PC-Lab):\n\nList of Experiments:\n\n1. Classical Ciphers\n   - Caesar cipher\n   - Substitution cipher\n   - Transposition cipher\n\n2. Symmetric Key Cryptography\n   - DES implementation\n   - AES implementation\n   - Blowfish implementation\n\n3. Asymmetric Key Cryptography\n   - RSA algorithm\n   - Diffie-Hellman key exchange\n   - ElGamal encryption\n\n4. Hash Functions\n   - MD5 implementation\n   - SHA-1 implementation\n   - SHA-256 implementation\n\n5. Digital Signatures\n   - RSA digital signature\n   - DSA implementation\n   - Message authentication\n\n6. SSL/TLS Implementation\n   - Certificate generation\n   - Secure connection setup\n   - Handshake protocol\n\n7. Network Security Tools\n   - Firewall configuration\n   - Intrusion detection systems\n   - Vulnerability scanning\n\n8. Security Protocols\n   - IPSec implementation\n   - VPN setup\n   - Wireless security protocols",
   },
 }
 
@@ -263,6 +288,16 @@ function App() {
       mba: "Dr. Lakshmi is the Head of Department (HOD) for Master of Business Administration at NNRG. She has expertise in finance and strategic management.",
       mca: "Dr. Prasad is the Head of Department (HOD) for Master of Computer Applications at NNRG. He specializes in database management systems and software engineering.",
     },
+    labs: {
+      "operating systems lab": "Operating Systems Lab at NNRG is equipped with modern computers and software for practical implementation of OS concepts. Students perform experiments on process scheduling, memory management, file systems, and more.",
+      "dbms lab": "Database Management Systems Lab at NNRG has advanced database servers and tools for students to practice SQL, PL/SQL, database design, and implementation of database applications.",
+      "data structures lab": "Data Structures Lab at NNRG provides facilities for implementing various data structures like arrays, linked lists, stacks, queues, trees, and graphs using programming languages like C and Java.",
+      "web technologies lab": "Web Technologies Lab at NNRG is equipped with web servers and development tools for students to learn HTML, CSS, JavaScript, PHP, and other web technologies.",
+      "computer networks lab": "Computer Networks Lab at NNRG has networking equipment like routers, switches, and network simulation software for practical implementation of networking concepts.",
+      "machine learning lab": "Machine Learning Lab at NNRG provides high-performance computers with ML libraries and tools for students to implement various machine learning algorithms and models.",
+      "compiler design lab": "Compiler Design Lab at NNRG is equipped with tools like LEX, YACC, and other compiler construction tools for students to learn the practical aspects of compiler design.",
+      "cryptography lab": "Cryptography and Network Security Lab at NNRG provides facilities for implementing various cryptographic algorithms, security protocols, and network security mechanisms.",
+    },
   }
 
   // Personality responses for general queries with style variations
@@ -402,7 +437,7 @@ function App() {
     exam: ["examination", "test", "assessment", "evaluation", "quiz"],
     scholarship: ["financial aid", "grant", "fellowship", "funding", "assistance"],
     event: ["function", "program", "celebration", "fest", "activity", "competition", "workshop", "seminar"],
-    lab: ["laboratory", "workshop", "practical", "experiment", "research facility"],
+    lab: ["laboratory", "workshop", "practical", "experiment", "research facility", "practicals", "experiments", "lab work"],
     "anti-ragging": ["ragging", "bullying", "harassment", "safety", "security", "protection"],
     "medical facilities": ["health center", "clinic", "hospital", "doctor", "nurse", "healthcare", "medical"],
     bus: ["buses", "college bus", "transport bus", "shuttle"],
@@ -453,6 +488,35 @@ function App() {
     "data science": "data science",
     algorithms: "algorithms",
     daa: "algorithms",
+  }
+
+  // Lab subject abbreviations
+  const labAbbreviations = {
+    "os lab": "operating systems lab",
+    "operating system lab": "operating systems lab",
+    "operating systems laboratory": "operating systems lab",
+    "dbms lab": "dbms lab",
+    "database lab": "dbms lab",
+    "database management lab": "dbms lab",
+    "database management systems laboratory": "dbms lab",
+    "ds lab": "data structures lab",
+    "data structures laboratory": "data structures lab",
+    "dsa lab": "data structures lab",
+    "wt lab": "web technologies lab",
+    "web lab": "web technologies lab",
+    "web technologies laboratory": "web technologies lab",
+    "cn lab": "computer networks lab",
+    "networks lab": "computer networks lab",
+    "computer networks laboratory": "computer networks lab",
+    "ml lab": "machine learning lab",
+    "machine learning laboratory": "machine learning lab",
+    "cd lab": "compiler design lab",
+    "compiler lab": "compiler design lab",
+    "compiler design laboratory": "compiler design lab",
+    "cns lab": "cryptography lab",
+    "crypto lab": "cryptography lab",
+    "network security lab": "cryptography lab",
+    "cryptography laboratory": "cryptography lab",
   }
 
   // Department abbreviations
@@ -535,6 +599,33 @@ function App() {
     return null
   }
 
+  // Check if query is about lab syllabus
+  const isLabSyllabusQuery = (query) => {
+    const lowercaseQuery = query.toLowerCase()
+    
+    // Check for explicit lab mentions
+    if (
+      (lowercaseQuery.includes("lab") || 
+       lowercaseQuery.includes("laboratory") || 
+       lowercaseQuery.includes("practical") || 
+       lowercaseQuery.includes("experiment")) && 
+      (lowercaseQuery.includes("syllabus") || 
+       lowercaseQuery.includes("course") || 
+       lowercaseQuery.includes("curriculum"))
+    ) {
+      return true
+    }
+    
+    // Check for lab abbreviations
+    for (const [abbr, _] of Object.entries(labAbbreviations)) {
+      if (lowercaseQuery.includes(abbr)) {
+        return true
+      }
+    }
+    
+    return false
+  }
+
   // Enhanced function to check if query is about syllabus
   const isSyllabusQuery = (query) => {
     const lowercaseQuery = query.toLowerCase()
@@ -572,6 +663,8 @@ function App() {
           lowercaseQuery.includes("topics") ||
           lowercaseQuery.includes("units") ||
           lowercaseQuery.includes("chapters") ||
+          lowercaseQuery.includes("what is in") ||
+          lowercaseQuery.includes("what's in")  ||
           lowercaseQuery.includes("what is in") ||
           lowercaseQuery.includes("what's in") ||
           lowercaseQuery.includes("tell me about") ||
@@ -689,9 +782,54 @@ function App() {
     return null
   }
 
+  // Get lab syllabus information
+  const getLabSyllabusInfo = (query) => {
+    const lowercaseQuery = query.toLowerCase()
+    
+    // First check for lab abbreviations
+    for (const [abbr, fullLab] of Object.entries(labAbbreviations)) {
+      if (lowercaseQuery.includes(abbr)) {
+        // If we have this lab in our knowledge base, return it
+        if (pdfKnowledgeBase.syllabusData[fullLab]) {
+          return pdfKnowledgeBase.syllabusData[fullLab]
+        }
+      }
+    }
+    
+    // Check for specific lab mentions
+    for (const [lab, content] of Object.entries(pdfKnowledgeBase.syllabusData)) {
+      if (lab.includes("lab") && lowercaseQuery.includes(lab)) {
+        return content
+      }
+    }
+    
+    // Try to extract the subject name and check if there's a corresponding lab
+    for (const [subject, _] of Object.entries(pdfKnowledgeBase.syllabusData)) {
+      if (!subject.includes("lab") && lowercaseQuery.includes(subject) && lowercaseQuery.includes("lab")) {
+        const labName = `${subject} lab`
+        if (pdfKnowledgeBase.syllabusData[labName]) {
+          return pdfKnowledgeBase.syllabusData[labName]
+        }
+      }
+    }
+    
+    // If no specific lab is found but it's a lab query
+    if (isLabSyllabusQuery(query)) {
+      return "I can provide information about various lab syllabi including Operating Systems Lab, DBMS Lab, Data Structures Lab, Web Technologies Lab, Computer Networks Lab, Machine Learning Lab, Compiler Design Lab, and Cryptography Lab. Please specify which lab syllabus you're interested in."
+    }
+    
+    return null
+  }
+
   // Enhanced function to get syllabus information from PDF knowledge base
   const getSyllabusInfo = (query) => {
     const lowercaseQuery = query.toLowerCase()
+    
+    // First check if it's a lab syllabus query
+    if (isLabSyllabusQuery(query)) {
+      const labSyllabusInfo = getLabSyllabusInfo(query)
+      if (labSyllabusInfo) return labSyllabusInfo
+    }
 
     // First check for subject abbreviations
     for (const [abbr, fullSubject] of Object.entries(subjectAbbreviations)) {
@@ -705,7 +843,7 @@ function App() {
 
     // Check for specific course mentions
     for (const [course, content] of Object.entries(pdfKnowledgeBase.syllabusData)) {
-      if (lowercaseQuery.includes(course)) {
+      if (lowercaseQuery.includes(course) && !course.includes("lab")) {
         return content
       }
     }
@@ -865,6 +1003,13 @@ function App() {
         expandedQuery += " " + fullSubject
       }
     }
+    
+    // Add full lab names for abbreviations
+    for (const [abbr, fullLab] of Object.entries(labAbbreviations)) {
+      if (lowercaseQuery.includes(abbr)) {
+        expandedQuery += " " + fullLab
+      }
+    }
 
     // Add department names for abbreviations
     for (const [abbr, dept] of Object.entries(departmentAbbreviations)) {
@@ -908,7 +1053,13 @@ function App() {
       return knowledgeBase.facilities.transport
     }
 
-    // Check for syllabus queries
+    // Check for lab syllabus queries first
+    if (isLabSyllabusQuery(query)) {
+      const labSyllabusInfo = getLabSyllabusInfo(query)
+      if (labSyllabusInfo) return labSyllabusInfo
+    }
+
+    // Check for regular syllabus queries
     const syllabusInfo = getSyllabusInfo(query)
     if (syllabusInfo) return syllabusInfo
 
@@ -1452,4 +1603,3 @@ function App() {
 }
 
 export default App
-
