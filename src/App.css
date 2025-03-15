@@ -29,6 +29,36 @@ body {
   line-height: 1.5;
 }
 
+/* App Container */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Debug Info - Helps with troubleshooting */
+.debug-info {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-size: 12px;
+}
+
+.debug-toggle {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /* Chat Widget */
 .chat-widget {
   width: 380px;
@@ -49,6 +79,7 @@ body {
 
 .chat-widget.chat-open {
   animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; /* Ensure it's displayed when open */
 }
 
 .chat-widget.chat-hidden {
@@ -525,3 +556,4 @@ body {
 .chat-messages::-webkit-scrollbar-thumb:hover {
   background: #9ca3af;
 }
+
